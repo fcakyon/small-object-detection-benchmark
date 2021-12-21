@@ -6,7 +6,7 @@ from sahi.utils.coco import Coco, CocoAnnotation, CocoCategory, CocoImage
 from sahi.utils.file import save_json
 from tqdm import tqdm
 
-visdrone_label_dict = {
+CATEGORY_ID_TO_NAME = {
     "0": "Ignore",
     "1": "Pedestrian",
     "2": "People",
@@ -25,8 +25,7 @@ visdrone_label_dict = {
 def visdrone_to_coco(
     data_folder_dir,
     output_file_path,
-    category_id_mapping=None,
-    category_id_to_name_mapping=None,
+    category_id_remapping=None,
 ):
     """
     Converts visdrone-det annotations into coco annotation.
@@ -36,14 +35,10 @@ def visdrone_to_coco(
             'VisDrone2019-DET-train' folder directory
         output_file_path: str
             Output file path
-        category_id_mapping: dict
+        category_id_remapping: dict
             Used for selecting desired category ids and mapping them.
             If not provided, VisDrone2019-DET mapping will be used.
             format: str(id) to str(id)
-        category_id_to_name_mapping: dict
-            Used for remapping category names.
-            If not provided, VisDrone2019-DET mapping will be used.
-            format: str(id) to str(name)
     """
 
     # init paths/folders
@@ -54,23 +49,20 @@ def visdrone_to_coco(
 
     Path(output_file_path).parents[0].mkdir(parents=True, exist_ok=True)
 
-    # set mappings if none is given
-    if category_id_mapping is None:
-        category_id_mapping = {}
-        for key in visdrone_label_dict.keys():
-            category_id_mapping[key] = key
-    if category_id_to_name_mapping is None:
-        category_id_to_name_mapping = visdrone_label_dict
+    if category_id_remapping is None:
+        category_id_remapping = {}
+        for category_id, category_name in CATEGORY_ID_TO_NAME.items():
+            category_id_remapping[category_id] = category_id
 
     # init coco object
     coco = Coco()
     # append categories
-    for category_id in category_id_to_name_mapping.keys():
-        coco.add_category(
-            CocoCategory(
-                id=int(category_id), name=category_id_to_name_mapping.get(category_id)
+    for category_id, category_name in CATEGORY_ID_TO_NAME.items():
+        if category_id in category_id_remapping.keys():
+            remapped_category_id = category_id_remapping[category_id]
+            coco.add_category(
+                CocoCategory(id=int(remapped_category_id), name=category_name)
             )
-        )
 
     # convert visdrone annotations to coco
     for image_filename in tqdm(image_filepath_list):
@@ -101,14 +93,17 @@ def visdrone_to_coco(
                 int(new_line[3]),
             ]
             # parse category id and name
-            if new_line[5] != "0" and new_line[5] != "11":
-                category_id = category_id_mapping.get(new_line[5])
-                category_name = category_id_to_name_mapping.get(category_id)
+            category_id = new_line[5]
+            if category_id in category_id_remapping.keys():
+                category_name = CATEGORY_ID_TO_NAME[category_id]
+                remapped_category_id = category_id_remapping[category_id]
             else:
                 continue
             # create coco annotation and append it to coco image
             coco_annotation = CocoAnnotation.from_coco_bbox(
-                bbox=bbox, category_id=int(category_id), category_name=category_name
+                bbox=bbox,
+                category_id=int(remapped_category_id),
+                category_name=category_name,
             )
             if coco_annotation.area > 0:
                 coco_image.add_annotation(coco_annotation)
@@ -124,7 +119,7 @@ if __name__ == "__main__":
     # set output coco json path
     output_file_path = "visdrone2019-det-train.json"
     # category_id_remapping format: str(id) to str(id)
-    category_id_mapping = {
+    category_id_remapping = {
         "1": "0",
         "2": "1",
         "3": "2",
@@ -136,22 +131,8 @@ if __name__ == "__main__":
         "9": "8",
         "10": "9",
     }
-    # category_id_to_name_mapping format: str(id) to str(name)
-    category_id_to_name_mapping = {
-        "0": "pedestrian",
-        "1": "people",
-        "2": "bicycle",
-        "3": "car",
-        "4": "van",
-        "5": "truck",
-        "6": "tricycle",
-        "7": "awning-tricycle",
-        "8": "bus",
-        "9": "motor",
-    }
     visdrone_to_coco(
         data_folder_dir=data_folder_dir,
         output_file_path=output_file_path,
-        category_id_mapping=category_id_mapping,
-        category_id_to_name_mapping=category_id_to_name_mapping,
+        category_id_remapping=category_id_remapping,
     )
