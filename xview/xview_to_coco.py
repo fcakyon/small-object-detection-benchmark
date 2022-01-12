@@ -7,7 +7,6 @@ import numpy as np
 from PIL import Image
 from sahi.utils.coco import Coco, CocoAnnotation, CocoCategory, CocoImage
 from sahi.utils.file import load_json, save_json
-from sklearn.model_selection import train_test_split
 from tqdm import tqdm
 
 # fix the seed
@@ -18,7 +17,7 @@ def xview_to_coco(
     train_images_dir,
     train_geojson_path,
     output_dir,
-    train_size=0.75,
+    train_split_rate=0.75,
     category_id_remapping=None,
 ):
     """
@@ -30,7 +29,9 @@ def xview_to_coco(
         train_geojson_path: str
             'xView_train.geojson' file path
         output_dir: str
-            Output fodler directory
+            Output folder directory
+        train_split_rate: bool
+            Train split ratio
         category_id_remapping: dict
             Used for selecting desired category ids and mapping them.
             If not provided, xView mapping will be used.
@@ -94,8 +95,12 @@ def xview_to_coco(
                 coco_image.add_annotation(coco_annotation)
         coco.add_image(coco_image)
 
+    result = coco.split_coco_as_train_val(train_split_rate=train_split_rate)
+
     train_json_path = Path(output_dir) / "train.json"
-    save_json(data=coco.json, save_path=train_json_path)
+    val_json_path = Path(output_dir) / "val.json"
+    save_json(data=result["train_coco"].json, save_path=train_json_path)
+    save_json(data=result["val_coco"].json, save_path=val_json_path)
 
 
 def get_ordered_image_name_list(image_name_to_annotation_ind: Dict):
@@ -157,11 +162,11 @@ def get_labels(fname):
 
 if __name__ == "__main__":
     # set 'train_images' folder directory
-    train_images_dir = "D:/Data/ObjectDetection/xview/train_images"
+    train_images_dir = None
     # set train geojson path
-    train_geojson_path = "D:/Data/ObjectDetection/xview/xView_train.geojson"
+    train_geojson_path = None
     # set output folder directory
-    output_dir = "D:/Data/ObjectDetection/xview/"
+    output_dir = None
 
     xview_to_coco(
         train_images_dir=train_images_dir,
