@@ -1,2 +1,5 @@
-git+https://github.com/obss/sahi.git@main
+sahi>=0.8.21
 pillow
+mmdet==2.20.0
+mmcv-full==1.4.2
+-f https://download.openmmlab.com/mmcv/dist/cu113/torch1.10.0/index.html
