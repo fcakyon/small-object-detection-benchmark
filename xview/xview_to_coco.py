@@ -3,6 +3,7 @@ from collections import defaultdict
 from pathlib import Path
 from typing import Dict, List
 
+import fire
 import numpy as np
 from PIL import Image
 from sahi.utils.coco import Coco, CocoAnnotation, CocoCategory, CocoImage
@@ -161,15 +162,4 @@ def get_labels(fname):
 
 
 if __name__ == "__main__":
-    # set 'train_images' folder directory
-    train_images_dir = None
-    # set train geojson path
-    train_geojson_path = None
-    # set output folder directory
-    output_dir = None
-
-    xview_to_coco(
-        train_images_dir=train_images_dir,
-        train_geojson_path=train_geojson_path,
-        output_dir=output_dir,
-    )
+    fire.Fire(xview_to_coco)

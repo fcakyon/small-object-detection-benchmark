@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
 
+import fire
 from PIL import Image
 from sahi.utils.coco import Coco, CocoAnnotation, CocoCategory, CocoImage
 from sahi.utils.file import save_json
@@ -114,25 +115,4 @@ def visdrone_to_coco(
 
 
 if __name__ == "__main__":
-    # set 'VisDrone2019-DET-train' or 'VisDrone2019-DET-val' folder directory
-    data_folder_dir = "VisDrone2019-DET-train"
-    # set output coco json path
-    output_file_path = "visdrone2019-det-train.json"
-    # category_id_remapping format: str(id) to str(id)
-    category_id_remapping = {
-        "1": "0",
-        "2": "1",
-        "3": "2",
-        "4": "3",
-        "5": "4",
-        "6": "5",
-        "7": "6",
-        "8": "7",
-        "9": "8",
-        "10": "9",
-    }
-    visdrone_to_coco(
-        data_folder_dir=data_folder_dir,
-        output_file_path=output_file_path,
-        category_id_remapping=category_id_remapping,
-    )
+    fire.Fire(visdrone_to_coco)
