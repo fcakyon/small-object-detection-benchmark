@@ -86,7 +86,7 @@ train_dataset = dict(
 )
 
 data = dict(
-    samples_per_gpu=8,
+    samples_per_gpu=8 * 4,
     workers_per_gpu=4,
     persistent_workers=True,
     train=train_dataset,
@@ -104,15 +104,15 @@ data = dict(
 
 # optimizer
 # default 8 gpu
+# /8 for 1 gpu
 optimizer = dict(
     type="SGD",
-    lr=0.01 / 8,  # for 1 gpu
+    lr=0.01 / 8 * 4,
     momentum=0.9,
     weight_decay=5e-4,
     nesterov=True,
     paramwise_cfg=dict(norm_decay_mult=0.0, bias_decay_mult=0.0),
 )
-
 # logger settings
 log_config = dict(
     interval=50,
