@@ -67,9 +67,7 @@ CLASSES = (
 
 # model settings
 model = dict(
-    bbox_head=dict(
-        type="YOLOXHead", num_classes=NUM_CLASSES, in_channels=128, feat_channels=128
-    ),
+    bbox_head=dict(type="YOLOXHead", num_classes=NUM_CLASSES, in_channels=128, feat_channels=128),
 )
 
 # dataset settings
@@ -126,14 +124,6 @@ log_config = dict(
             init_kwargs=dict(
                 project="xview",
                 entity="fca",
-                name="yolox_s_400_0",
-                tags=["yolox", "slice_size=400", "overlap_ratio=0"],
-            ),
-        ),
-        dict(
-            type="NeptuneLoggerHook",
-            init_kwargs=dict(
-                project="OBSS-ML/xview",
                 name="yolox_s_400_0",
                 tags=["yolox", "slice_size=400", "overlap_ratio=0"],
             ),
