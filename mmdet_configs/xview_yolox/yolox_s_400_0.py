@@ -1,6 +1,7 @@
 _base_ = ["../yolox/yolox_s_8x8_300e_coco.py"]
 
 DATA_ROOT = "data/xview/"
+BATCH_MULTIPLIER = 6
 NUM_CLASSES = 60
 CLASSES = (
     "Fixed-wing Aircraft",
@@ -86,7 +87,7 @@ train_dataset = dict(
 )
 
 data = dict(
-    samples_per_gpu=8 * 4,
+    samples_per_gpu=8 * BATCH_MULTIPLIER,
     workers_per_gpu=4,
     persistent_workers=True,
     train=train_dataset,
@@ -107,7 +108,7 @@ data = dict(
 # /8 for 1 gpu
 optimizer = dict(
     type="SGD",
-    lr=0.01 / 8 * 4,
+    lr=0.01 / 8 * BATCH_MULTIPLIER,
     momentum=0.9,
     weight_decay=5e-4,
     nesterov=True,

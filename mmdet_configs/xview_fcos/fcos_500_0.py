@@ -1,6 +1,7 @@
 _base_ = ["../fcos/fcos_center-normbbox-centeronreg-giou_r50_caffe_fpn_gn-head_1x_coco.py"]
 
 DATA_ROOT = "data/xview/"
+BATCH_MULTIPLIER = 16
 NUM_CLASSES = 60
 CLASSES = (
     "Fixed-wing Aircraft",
@@ -74,7 +75,7 @@ model = dict(
 
 # dataset settings
 data = dict(
-    samples_per_gpu=2 * 8,
+    samples_per_gpu=2 * BATCH_MULTIPLIER,
     workers_per_gpu=2,
     train=dict(
         classes=CLASSES,
@@ -96,7 +97,7 @@ data = dict(
 # optimizer
 # default 8 gpu
 # /8 for 1 gpu
-optimizer = dict(lr=0.01 / 8 * 8, paramwise_cfg=dict(bias_lr_mult=2.0, bias_decay_mult=0.0))
+optimizer = dict(lr=0.01 / 8 * BATCH_MULTIPLIER, paramwise_cfg=dict(bias_lr_mult=2.0, bias_decay_mult=0.0))
 
 evaluation = dict(metric="bbox", save_best="auto")
 
