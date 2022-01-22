@@ -23,7 +23,7 @@ def slice_xview(image_dir: str, dataset_json_path: str, output_dir: str):
                 slice_size=slice_size,
                 overlap_ratio=overlap_ratio,
             )
-            current_run = +1
+            current_run += 1
 
 
 if __name__ == "__main__":
