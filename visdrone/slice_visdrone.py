@@ -2,8 +2,7 @@ import fire
 from sahi.scripts.slice_coco import slice
 from tqdm import tqdm
 
-MAX_WORKERS = 20
-SLICE_SIZE_LIST = [320, 640, 960]
+SLICE_SIZE_LIST = [480, 640]
 OVERLAP_RATIO_LIST = [0, 0.25]
 IGNORE_NEGATIVE_SAMPLES = False
 

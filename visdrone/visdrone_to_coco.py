@@ -8,18 +8,44 @@ from sahi.utils.file import save_json
 from tqdm import tqdm
 
 CATEGORY_ID_TO_NAME = {
-    "0": "Ignore",
-    "1": "Pedestrian",
-    "2": "People",
-    "3": "Bicycle",
-    "4": "Car",
-    "5": "Van",
-    "6": "Truck",
-    "7": "Tricycle",
-    "8": "Awning-tricycle",
-    "9": "Bus",
-    "10": "Motor",
-    "11": "Others",
+    "0": "ignore",
+    "1": "pedestrian",
+    "2": "people",
+    "3": "bicycle",
+    "4": "car",
+    "5": "van",
+    "6": "truck",
+    "7": "tricycle",
+    "8": "awning-tricycle",
+    "9": "bus",
+    "10": "motor",
+    "11": "others",
+}
+
+CATEGORY_ID_REMAPPING = {
+    "1": "0",
+    "2": "1",
+    "3": "2",
+    "4": "3",
+    "5": "4",
+    "6": "5",
+    "7": "6",
+    "8": "7",
+    "9": "8",
+    "10": "9",
+}
+
+NAME_TO_COCO_CATEGORY = {
+    "pedestrian": {"name": "pedestrian", "supercategory": "person"},
+    "people": {"name": "people", "supercategory": "person"},
+    "bicycle": {"name": "bicycle", "supercategory": "bicycle"},
+    "car": {"name": "car", "supercategory": "car"},
+    "van": {"name": "van", "supercategory": "truck"},
+    "truck": {"name": "truck", "supercategory": "truck"},
+    "tricycle": {"name": "tricycle", "supercategory": "motor"},
+    "awning-tricycle": {"name": "awning-tricycle", "supercategory": "motor"},
+    "bus": {"name": "bus", "supercategory": "bus"},
+    "motor": {"name": "motor", "supercategory": "motor"},
 }
 
 
@@ -51,9 +77,7 @@ def visdrone_to_coco(
     Path(output_file_path).parents[0].mkdir(parents=True, exist_ok=True)
 
     if category_id_remapping is None:
-        category_id_remapping = {}
-        for category_id, category_name in CATEGORY_ID_TO_NAME.items():
-            category_id_remapping[category_id] = category_id
+        category_id_remapping = CATEGORY_ID_REMAPPING
 
     # init coco object
     coco = Coco()
@@ -61,8 +85,13 @@ def visdrone_to_coco(
     for category_id, category_name in CATEGORY_ID_TO_NAME.items():
         if category_id in category_id_remapping.keys():
             remapped_category_id = category_id_remapping[category_id]
+            coco_category = NAME_TO_COCO_CATEGORY[category_name]
             coco.add_category(
-                CocoCategory(id=int(remapped_category_id), name=category_name)
+                CocoCategory(
+                    id=int(remapped_category_id),
+                    name=coco_category["name"],
+                    supercategory=coco_category["supercategory"],
+                )
             )
 
     # convert visdrone annotations to coco
@@ -72,15 +101,11 @@ def visdrone_to_coco(
         annotation_filename = image_filename.split(".jpg")[0] + ".txt"
         annotation_filepath = str(Path(input_ann_folder) / annotation_filename)
         image = Image.open(image_filepath)
-        cocoimage_filename = str(Path(image_filepath)).split(
-            str(Path(data_folder_dir))
-        )[1]
+        cocoimage_filename = str(Path(image_filepath)).split(str(Path(data_folder_dir)))[1]
         if cocoimage_filename[0] == os.sep:
             cocoimage_filename = cocoimage_filename[1:]
         # create coco image object
-        coco_image = CocoImage(
-            file_name=cocoimage_filename, height=image.size[1], width=image.size[0]
-        )
+        coco_image = CocoImage(file_name=cocoimage_filename, height=image.size[1], width=image.size[0])
         # parse annotation file
         file = open(annotation_filepath, "r")
         lines = file.readlines()
