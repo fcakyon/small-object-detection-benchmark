@@ -1,7 +1,10 @@
 _base_ = ["../fcos/fcos_center-normbbox-centeronreg-giou_r50_caffe_fpn_gn-head_1x_coco.py"]
 
+TAGS = ["fcos", "slice_size=400", "overlap_ratio=0", "24epochs"]
 DATA_ROOT = "data/xview/"
 BATCH_MULTIPLIER = 16
+LR_MULTIPLIER = 1
+EVAL_INTERVAL = 3
 NUM_CLASSES = 60
 CLASSES = (
     "Fixed-wing Aircraft",
@@ -70,7 +73,9 @@ CLASSES = (
 model = dict(
     bbox_head=dict(
         num_classes=NUM_CLASSES,
-    )
+    ),
+    # testing settings
+    test_cfg=dict(max_per_img=100),
 )
 
 # dataset settings
@@ -97,9 +102,16 @@ data = dict(
 # optimizer
 # default 8 gpu
 # /8 for 1 gpu
-optimizer = dict(lr=0.01 / 8 * BATCH_MULTIPLIER, paramwise_cfg=dict(bias_lr_mult=2.0, bias_decay_mult=0.0))
+optimizer = dict(
+    lr=0.01 / 8 * BATCH_MULTIPLIER * LR_MULTIPLIER, paramwise_cfg=dict(bias_lr_mult=2.0, bias_decay_mult=0.0)
+)
 
-evaluation = dict(metric="bbox", save_best="auto")
+checkpoint_config = dict(interval=1, max_keep_ckpts=1, save_optimizer=False)
+evaluation = dict(interval=EVAL_INTERVAL, metric="bbox", save_best="auto")
+
+# learning policy
+lr_config = dict(policy="step", warmup="constant", warmup_iters=500, warmup_ratio=1.0 / 3, step=[18])
+runner = dict(type="EpochBasedRunner", max_epochs=24)
 
 # logger settings
 log_config = dict(
@@ -113,8 +125,10 @@ log_config = dict(
                 project="xview",
                 entity="fca",
                 name="fcos_400_0",
-                tags=["fcos", "slice_size=400", "overlap_ratio=0"],
+                tags=TAGS,
             ),
+            log_artifact=True,
+            out_suffix=(".py"),
         ),
     ],
 )

@@ -1,9 +1,10 @@
-_base_ = ["../yolox/yolox_s_8x8_300e_coco.py"]
+_base_ = ["../detr/detr_r50_8x2_150e_coco.py"]
 
-TAGS = ["yolox", "slice_size=500", "overlap_ratio=0", "75epochs"]
+TAGS = ["detr", "slice_size=500", "overlap_ratio=0", "150epochs"]
 DATA_ROOT = "data/xview/"
-BATCH_MULTIPLIER = 4
-EVAL_INTERVAL = 5
+BATCH_MULTIPLIER = 8
+LR_MULTIPLIER = 1
+EVAL_INTERVAL = 10
 NUM_CLASSES = 60
 CLASSES = (
     "Fixed-wing Aircraft",
@@ -68,31 +69,25 @@ CLASSES = (
     "Tower",
 )
 
-# model settings
 model = dict(
-    bbox_head=dict(type="YOLOXHead", num_classes=NUM_CLASSES, in_channels=128, feat_channels=128),
+    bbox_head=dict(
+        type="DETRHead",
+        num_query=100,
+        num_classes=NUM_CLASSES,
+    ),
     # testing settings
     test_cfg=dict(max_per_img=100),
 )
 
 # dataset settings
-train_dataset = dict(
-    dataset=dict(
+data = dict(
+    samples_per_gpu=2 * BATCH_MULTIPLIER,
+    workers_per_gpu=2,
+    train=dict(
         classes=CLASSES,
         ann_file=DATA_ROOT + "sliced/train_500_0.json",
         img_prefix=DATA_ROOT + "sliced/train_images_500_0/",
-        pipeline=[
-            dict(type="LoadImageFromFile"),
-            dict(type="LoadAnnotations", with_bbox=True),
-        ],
     ),
-)
-
-data = dict(
-    samples_per_gpu=8 * BATCH_MULTIPLIER,
-    workers_per_gpu=4,
-    persistent_workers=True,
-    train=train_dataset,
     val=dict(
         classes=CLASSES,
         ann_file=DATA_ROOT + "sliced/val_500_0.json",
@@ -109,40 +104,18 @@ data = dict(
 # default 8 gpu
 # /8 for 1 gpu
 optimizer = dict(
-    type="SGD",
-    lr=0.01 / 8 * BATCH_MULTIPLIER,
-    momentum=0.9,
-    weight_decay=5e-4,
-    nesterov=True,
-    paramwise_cfg=dict(norm_decay_mult=0.0, bias_decay_mult=0.0),
+    type="AdamW",
+    lr=0.0001 / 8 * BATCH_MULTIPLIER * LR_MULTIPLIER,
+    weight_decay=0.0001,
+    paramwise_cfg=dict(custom_keys={"backbone": dict(lr_mult=0.1, decay_mult=1.0)}),
 )
-
-max_epochs = 75
-num_last_epochs = max_epochs
-
-# learning policy
-lr_config = dict(
-    _delete_=True,
-    policy="YOLOX",
-    warmup="exp",
-    by_epoch=False,
-    warmup_by_epoch=True,
-    warmup_ratio=1,
-    warmup_iters=1,  # 1 epoch
-    num_last_epochs=num_last_epochs,
-    min_lr_ratio=0.05,
-)
-
-runner = dict(type="EpochBasedRunner", max_epochs=max_epochs)
-
-custom_hooks = [
-    dict(type="YOLOXModeSwitchHook", num_last_epochs=num_last_epochs, priority=48),
-    dict(type="SyncNormHook", num_last_epochs=num_last_epochs, interval=EVAL_INTERVAL, priority=48),
-    dict(type="ExpMomentumEMAHook", resume_from=None, momentum=0.0001, priority=49),
-]
 
 checkpoint_config = dict(interval=1, max_keep_ckpts=1, save_optimizer=False)
 evaluation = dict(interval=EVAL_INTERVAL, metric="bbox", save_best="auto")
+
+# learning policy
+lr_config = dict(policy="step", step=[100])
+runner = dict(type="EpochBasedRunner", max_epochs=150)
 
 # logger settings
 log_config = dict(
@@ -155,7 +128,7 @@ log_config = dict(
             init_kwargs=dict(
                 project="xview",
                 entity="fca",
-                name="yolox_s_500_0",
+                name="detr_r50_500_0",
                 tags=TAGS,
             ),
             log_artifact=True,
@@ -164,5 +137,5 @@ log_config = dict(
     ],
 )
 
-load_from = "https://download.openmmlab.com/mmdetection/v2.0/yolox/yolox_s_8x8_300e_coco/yolox_s_8x8_300e_coco_20211121_095711-4592a793.pth"
-work_dir = "runs/xview/yolox_s_500_0/"
+load_from = "https://download.openmmlab.com/mmdetection/v2.0/detr/detr_r50_8x2_150e_coco/detr_r50_8x2_150e_coco_20201130_194835-2c4b8974.pth"
+work_dir = "runs/xview/detr_r50_500_0/"
