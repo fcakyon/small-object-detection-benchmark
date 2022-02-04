@@ -1,5 +1,5 @@
 # sahi-benchmark
-sahi benchmark on visdrone and xview datasets using fcos, yolox and detr detectors
+sahi benchmark on visdrone and xview datasets using [fcos](https://arxiv.org/abs/1904.01355), [vfnet](https://arxiv.org/abs/1810.05943) and [tood](https://arxiv.org/abs/2108.07755) detectors
 
 # env setup
 
@@ -17,11 +17,7 @@ pip install -r requirements.txt
 
 # roadmap
 
-xview:
-
 - [x] add train test split support for xview to coco converter
-- [x] add .py script for creating sliced xview datasets utilizing `sahi` (for slice_size: {300, 400, 500} and overlap_ratio: {0, 0.25})
-- [x] add .py script for creating sliced visdrone datasets utilizing `sahi` (for slice_size: {320, 640, 960} and overlap_ratio: {0, 0.25})
-- [x] add mmdet config files (fcos, yolox and detr) for xview training (18 experiments)
-- [ ] add mmdet config files (fcos, yolox and detr) for visdrone training (27 experiments)
+- [x] add mmdet config files (fcos, vfnet and tood) for xview training (9 train experiments)
+- [x] add mmdet config files (fcos, vfnet and tood) for visdrone training (9 train experiments)
 - [ ] add .py scripts for inference + evaluation + error analysis using `sahi`
