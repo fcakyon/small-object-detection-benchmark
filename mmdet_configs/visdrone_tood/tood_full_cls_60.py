@@ -1,76 +1,13 @@
 _base_ = ["../tood/tood_r50_fpn_1x_coco.py"]
 
-
+TAGS = ["tood", "crop=False", "24epochs", "num_cls=60", "repeat=5"]
 EXP_NAME = "tood_full_cls_60"
-DATA_ROOT = "data/xview/"
+DATA_ROOT = "data/visdrone2019/"
 BATCH_MULTIPLIER = 8
 LR_MULTIPLIER = 1
 EVAL_INTERVAL = 3
-NUM_CLASSES = 60
-DATASET_REPEAT = 30
-TAGS = ["tood", "crop=False", "24epochs", f"num_cls={NUM_CLASSES}", f"repeat={DATASET_REPEAT}"]
-CLASSES = (
-    "Fixed-wing Aircraft",
-    "Small Aircraft",
-    "Cargo Plane",
-    "Helicopter",
-    "Passenger Vehicle",
-    "Small Car",
-    "Bus",
-    "Pickup Truck",
-    "Utility Truck",
-    "Truck",
-    "Cargo Truck",
-    "Truck w/Box",
-    "Truck Tractor",
-    "Trailer",
-    "Truck w/Flatbed",
-    "Truck w/Liquid",
-    "Crane Truck",
-    "Railway Vehicle",
-    "Passenger Car",
-    "Cargo Car",
-    "Flat Car",
-    "Tank car",
-    "Locomotive",
-    "Maritime Vessel",
-    "Motorboat",
-    "Sailboat",
-    "Tugboat",
-    "Barge",
-    "Fishing Vessel",
-    "Ferry",
-    "Yacht",
-    "Container Ship",
-    "Oil Tanker",
-    "Engineering Vehicle",
-    "Tower crane",
-    "Container Crane",
-    "Reach Stacker",
-    "Straddle Carrier",
-    "Mobile Crane",
-    "Dump Truck",
-    "Haul Truck",
-    "Scraper/Tractor",
-    "Front loader/Bulldozer",
-    "Excavator",
-    "Cement Mixer",
-    "Ground Grader",
-    "Hut/Tent",
-    "Shed",
-    "Building",
-    "Aircraft Hangar",
-    "Damaged Building",
-    "Facility",
-    "Construction Site",
-    "Vehicle Lot",
-    "Helipad",
-    "Storage Tank",
-    "Shipping container lot",
-    "Shipping Container",
-    "Pylon",
-    "Tower",
-)
+NUM_CLASSES = 10
+CLASSES = ("pedestrian", "people", "bicycle", "car", "van", "truck", "tricycle", "awning-tricycle", "bus", "motor")
 
 # model settings
 model = dict(
@@ -113,25 +50,25 @@ data = dict(
     workers_per_gpu=2,
     train=dict(
         type="RepeatDataset",
-        times=DATASET_REPEAT,
+        times=5,
         dataset=dict(
             type="CocoDataset",
             classes=CLASSES,
             ann_file=DATA_ROOT + "coco/train.json",
-            img_prefix=DATA_ROOT + "train_images/",
+            img_prefix=DATA_ROOT + "VisDrone2019-DET-train/",
             pipeline=train_pipeline,
         ),
     ),
     val=dict(
         classes=CLASSES,
-        ann_file=DATA_ROOT + "sliced/val_400_0.json",
-        img_prefix=DATA_ROOT + "sliced/val_images_400_0/",
+        ann_file=DATA_ROOT + "sliced/val_640_0.json",
+        img_prefix=DATA_ROOT + "sliced/val_images_640_0/",
         pipeline=test_pipeline,
     ),
     test=dict(
         classes=CLASSES,
-        ann_file=DATA_ROOT + "sliced/val_400_0.json",
-        img_prefix=DATA_ROOT + "sliced/val_images_400_0/",
+        ann_file=DATA_ROOT + "sliced/val_640_0.json",
+        img_prefix=DATA_ROOT + "sliced/val_images_640_0/",
         pipeline=test_pipeline,
     ),
 )
@@ -158,4 +95,4 @@ log_config = dict(
 )
 
 load_from = "https://download.openmmlab.com/mmdetection/v2.0/tood/tood_r50_fpn_1x_coco/tood_r50_fpn_1x_coco_20211210_103425-20e20746.pth"
-work_dir = f"runs/xview/{EXP_NAME}/"
+work_dir = f"runs/visdrone/{EXP_NAME}/"
