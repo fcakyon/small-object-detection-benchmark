@@ -2,7 +2,11 @@
 
 sahi benchmark on visdrone and xview datasets using [fcos](https://arxiv.org/abs/1904.01355), [vfnet](https://arxiv.org/abs/1810.05943) and [tood](https://arxiv.org/abs/2108.07755) detectors
 
+refer to [Slicing Aided Hyper Inference and Fine-tuning for Small Object Detection](https://arxiv.org/abs/2202.06934) for full technical analysis
+
 # xview results
+
+refer to table 2 in [Slicing Aided Hyper Inference and Fine-tuning for Small Object Detection](https://arxiv.org/abs/2202.06934) for more detail on xview results
 
 [fcos_fi_xview_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/fcos_fi_xview_results.zip
 [fcos_sf_sahi_xview_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/fcos_sf_sahi_xview_results.zip
