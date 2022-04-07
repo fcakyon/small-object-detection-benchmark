@@ -4,6 +4,59 @@ sahi benchmark on visdrone and xview datasets using [fcos](https://arxiv.org/abs
 
 refer to [Slicing Aided Hyper Inference and Fine-tuning for Small Object Detection](https://arxiv.org/abs/2202.06934) for full technical analysis
 
+# visdrone results
+
+refer to table 1 in [Slicing Aided Hyper Inference and Fine-tuning for Small Object Detection](https://arxiv.org/abs/2202.06934) for more detail on visdrone results
+
+[fcos_fi_visdrone_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/fcos_fi_visdrone_results.zip
+[fcos_sahi_po_visdrone_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/fcos_sahi_po_visdrone_results.zip
+[fcos_sahi_fi_po_visdrone_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/fcos_sahi_fi_po_visdrone_results.zip
+[fcos_sf_sahi_po_visdrone_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/fcos_sf_sahi_po_visdrone_results.zip
+[fcos_sf_sahi_fi_po_visdrone_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/fcos_sf_sahi_fi_po_visdrone_results.zip
+
+[vfnet_fi_visdrone_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/vfnet_fi_visdrone_results.zip
+[vfnet_sahi_po_visdrone_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/vfnet_sahi_po_visdrone_results.zip
+[vfnet_sahi_fi_po_visdrone_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/vfnet_sahi_fi_po_visdrone_results.zip
+[vfnet_sf_sahi_po_visdrone_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/vfnet_sf_sahi_po_visdrone_results.zip
+[vfnet_sf_sahi_fi_po_visdrone_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/vfnet_sf_sahi_fi_po_visdrone_results.zip
+
+[tood_fi_visdrone_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/tood_fi_visdrone_results.zip
+[tood_sahi_visdrone_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/tood_sahi_visdrone_results.zip
+[tood_sahi_po_visdrone_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/tood_sahi_po_visdrone_results.zip
+[tood_sahi_fi_visdrone_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/tood_sahi_fi_visdrone_results.zip
+[tood_sahi_fi_po_visdrone_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/tood_sahi_fi_po_visdrone_results.zip
+
+[tood_sf_fi_visdrone_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/tood_sf_fi_visdrone_results.zip
+[tood_sf_sahi_visdrone_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/tood_sf_sahi_visdrone_results.zip
+[tood_sf_sahi_po_visdrone_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/tood_sf_sahi_po_visdrone_results.zip
+[tood_sf_sahi_fi_visdrone_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/tood_sf_sahi_fi_visdrone_results.zip
+[tood_sf_sahi_fi_po_visdrone_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/tood_sf_sahi_fi_po_visdrone_results.zip
+
+|setup |AP<sub>50</sub> |AP<sub>50</sub>s |AP<sub>50</sub>m |AP<sub>50</sub>l | results |
+|--- |--- |--- |--- |--- |--- |
+|FCOS+FI |25.8 |14.2 |39.6 |45.1 | [download][fcos_fi_visdrone_results_url]
+|FCOS+SAHI+PO |29.0 |18.9 |41.5 |46.4 | [download][fcos_sahi_po_visdrone_results_url]
+|FCOS+SAHI+FI+PO |31.0 |19.8 |44.6 |49.0 | [download][fcos_sahi_fi_po_visdrone_results_url]
+|FCOS+SF+SAHI+PO |38.1 |25.7 |54.8 |56.9 | [download][fcos_sf_sahi_po_visdrone_results_url]
+|FCOS+SF+SAHI+FI+PO |38.5 |25.9 |55.4 |59.8 | [download][fcos_sf_sahi_fi_po_visdrone_results_url]
+|--- |--- |--- |--- |--- |--- |
+|VFNet+FI |28.8 |16.8 |44.0 |47.5 | [download][vfnet_fi_visdrone_results_url]
+|VFNet+SAHI+PO |32.0 |21.4 |45.8 |45.5 | [download][vfnet_sahi_po_visdrone_results_url]
+|VFNet+SAHI+FI+PO |33.9 |22.4 |49.1 |49.4 | [download][vfnet_sahi_fi_po_visdrone_results_url]
+|VFNet+SF+SAHI+PO |41.9 |29.7 |58.8 |60.6 | [download][vfnet_sf_sahi_po_visdrone_results_url]
+|VFNet+SF+SAHI+FI+PO |42.2 |29.6 |59.2 |63.3 | [download][vfnet_sf_sahi_fi_po_visdrone_results_url]
+|--- |--- |--- |--- |--- |--- |
+|TOOD+FI |29.4 |18.1 |44.1 |50.0 | [download][tood_fi_visdrone_results_url]
+|TOOD+SAHI |31.9 |22.6 |44.0 |45.2 | [download][tood_sahi_visdrone_results_url]
+|TOOD+SAHI+PO |32.5 |22.8 |45.2 |43.6 | [download][tood_sahi_po_visdrone_results_url]
+|TOOD+SAHI+FI |34.6 |23.8 |48.5 |53.1 | [download][tood_sahi_fi_visdrone_results_url]
+|TOOD+SAHI+FI+PO |34.7 |23.8 |48.9 |50.3| [download][tood_sahi_fi_po_visdrone_results_url]
+|TOOD+SF+FI |36.8 |24.4 |53.8 |66.4 | [download][tood_sf_fi_visdrone_results_url]
+|TOOD+SF+SAHI |42.5 |31.6 |58.0 |61.1 | [download][tood_sf_sahi_visdrone_results_url]
+|TOOD+SF+SAHI+PO |43.1 |31.7 |59.0 |60.2 | [download][tood_sf_sahi_po_visdrone_results_url]
+|TOOD+SF+SAHI+FI |43.4 |31.7 |59.6 |65.6 | [download][tood_sf_sahi_fi_visdrone_results_url]
+|TOOD+SF+SAHI+FI+PO |43.5 |31.7 |59.8 |65.4 | [download][tood_sf_sahi_fi_po_visdrone_results_url]
+
 # xview results
 
 refer to table 2 in [Slicing Aided Hyper Inference and Fine-tuning for Small Object Detection](https://arxiv.org/abs/2202.06934) for more detail on xview results
