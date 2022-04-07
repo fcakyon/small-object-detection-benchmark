@@ -31,10 +31,10 @@ sahi benchmark on visdrone and xview datasets using [fcos](https://arxiv.org/abs
 |FCOS+SF+SAHI+FI+OP |17.0 |12.2 |20.2 |15.8 | [download][fcos_sf_sahi_fi_op_xview_results_url]
 |--- |--- |--- |--- |--- |--- |
 |VFNet+FI |2.10 |0.50 |1.80 |6.80 | [download][vfnet_fi_xview_results_url]
-|VFNet+SF+SAHI |14.8 |11.8 |16.0 |12.5 | [download][vfnet_sf_sahi_xview_results_url]
-|VFNet+SF+SAHI+OP |16.5 |10.4 |17.6 |15.7 | [download][vfnet_sf_sahi_op_xview_results_url]
-|VFNet+SF+SAHI+FI |14.6 |10.2 |14.5 |15.7 | [download][vfnet_sf_sahi_fi_xview_results_url]
-|VFNet+SF+SAHI+FI+OP |15.8 |10.2 |15.8 |17.0 | [download][vfnet_sf_sahi_fi_op_xview_results_url]
+|VFNet+SF+SAHI | 16.0 |11.9 |17.6 |13.1 | [download][vfnet_sf_sahi_xview_results_url]
+|VFNet+SF+SAHI+OP |17.7| 13.7 |19.7 |15.4 | [download][vfnet_sf_sahi_op_xview_results_url]
+|VFNet+SF+SAHI+FI |15.8 |11.9 |17.5 |15.2 | [download][vfnet_sf_sahi_fi_xview_results_url]
+|VFNet+SF+SAHI+FI+OP |17.5 |13.7 |19.6 |17.6 | [download][vfnet_sf_sahi_fi_op_xview_results_url]
 |--- |--- |--- |--- |--- |--- |
 |TOOD+FI |2.10 |0.10 |2.00 |5.20 | [download][tood_fi_xview_results_url]
 |TOOD+SF+SAHI |19.4 |14.6 |22.5 |14.2 | [download][tood_sf_sahi_xview_results_url]
