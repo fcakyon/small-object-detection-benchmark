@@ -119,5 +119,5 @@ pip install -r requirements.txt
 - [x] add mmdet config files (fcos, vfnet and tood) for xview training (9 train experiments)
 - [x] add mmdet config files (fcos, vfnet and tood) for visdrone training (9 train experiments)
 - [x] add coco result.json files, classwise coco eval results error analysis plots for all xview experiments
-- [ ] add coco result.json files, classwise coco eval results error analysis plots for all visdrone experiments
+- [x] add coco result.json files, classwise coco eval results error analysis plots for all visdrone experiments
 - [ ] add .py scripts for inference + evaluation + error analysis using `sahi`
