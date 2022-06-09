@@ -32,30 +32,34 @@ refer to table 1 in [Slicing Aided Hyper Inference and Fine-tuning for Small Obj
 [tood_sf_sahi_fi_visdrone_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/tood_sf_sahi_fi_visdrone_results.zip
 [tood_sf_sahi_fi_po_visdrone_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/tood_sf_sahi_fi_po_visdrone_results.zip
 
-|setup |AP<sub>50</sub> |AP<sub>50</sub>s |AP<sub>50</sub>m |AP<sub>50</sub>l | results |
-|--- |--- |--- |--- |--- |--- |
-|FCOS+FI |25.8 |14.2 |39.6 |45.1 | [download][fcos_fi_visdrone_results_url]
-|FCOS+SAHI+PO |29.0 |18.9 |41.5 |46.4 | [download][fcos_sahi_po_visdrone_results_url]
-|FCOS+SAHI+FI+PO |31.0 |19.8 |44.6 |49.0 | [download][fcos_sahi_fi_po_visdrone_results_url]
-|FCOS+SF+SAHI+PO |38.1 |25.7 |54.8 |56.9 | [download][fcos_sf_sahi_po_visdrone_results_url]
-|FCOS+SF+SAHI+FI+PO |38.5 |25.9 |55.4 |59.8 | [download][fcos_sf_sahi_fi_po_visdrone_results_url]
-|--- |--- |--- |--- |--- |--- |
-|VFNet+FI |28.8 |16.8 |44.0 |47.5 | [download][vfnet_fi_visdrone_results_url]
-|VFNet+SAHI+PO |32.0 |21.4 |45.8 |45.5 | [download][vfnet_sahi_po_visdrone_results_url]
-|VFNet+SAHI+FI+PO |33.9 |22.4 |49.1 |49.4 | [download][vfnet_sahi_fi_po_visdrone_results_url]
-|VFNet+SF+SAHI+PO |41.9 |29.7 |58.8 |60.6 | [download][vfnet_sf_sahi_po_visdrone_results_url]
-|VFNet+SF+SAHI+FI+PO |42.2 |29.6 |59.2 |63.3 | [download][vfnet_sf_sahi_fi_po_visdrone_results_url]
-|--- |--- |--- |--- |--- |--- |
-|TOOD+FI |29.4 |18.1 |44.1 |50.0 | [download][tood_fi_visdrone_results_url]
-|TOOD+SAHI |31.9 |22.6 |44.0 |45.2 | [download][tood_sahi_visdrone_results_url]
-|TOOD+SAHI+PO |32.5 |22.8 |45.2 |43.6 | [download][tood_sahi_po_visdrone_results_url]
-|TOOD+SAHI+FI |34.6 |23.8 |48.5 |53.1 | [download][tood_sahi_fi_visdrone_results_url]
-|TOOD+SAHI+FI+PO |34.7 |23.8 |48.9 |50.3| [download][tood_sahi_fi_po_visdrone_results_url]
-|TOOD+SF+FI |36.8 |24.4 |53.8 |66.4 | [download][tood_sf_fi_visdrone_results_url]
-|TOOD+SF+SAHI |42.5 |31.6 |58.0 |61.1 | [download][tood_sf_sahi_visdrone_results_url]
-|TOOD+SF+SAHI+PO |43.1 |31.7 |59.0 |60.2 | [download][tood_sf_sahi_po_visdrone_results_url]
-|TOOD+SF+SAHI+FI |43.4 |31.7 |59.6 |65.6 | [download][tood_sf_sahi_fi_visdrone_results_url]
-|TOOD+SF+SAHI+FI+PO |43.5 |31.7 |59.8 |65.4 | [download][tood_sf_sahi_fi_po_visdrone_results_url]
+[tood_sf_visdrone_checkpoint_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.2/tood_sf_visdrone.pth
+
+[my_twitter_url]: https://twitter.com/fcakyon
+
+|setup |AP<sub>50</sub> |AP<sub>50</sub>s |AP<sub>50</sub>m |AP<sub>50</sub>l | results | checkpoints |
+|--- |--- |--- |--- |--- |--- |--- |
+|FCOS+FI |25.8 |14.2 |39.6 |45.1 | [download][fcos_fi_visdrone_results_url] | [request][my_twitter_url] |
+|FCOS+SAHI+PO |29.0 |18.9 |41.5 |46.4 | [download][fcos_sahi_po_visdrone_results_url] | [request][my_twitter_url] |
+|FCOS+SAHI+FI+PO |31.0 |19.8 |44.6 |49.0 | [download][fcos_sahi_fi_po_visdrone_results_url] | [request][my_twitter_url] |
+|FCOS+SF+SAHI+PO |38.1 |25.7 |54.8 |56.9 | [download][fcos_sf_sahi_po_visdrone_results_url] | [request][my_twitter_url] |
+|FCOS+SF+SAHI+FI+PO |38.5 |25.9 |55.4 |59.8 | [download][fcos_sf_sahi_fi_po_visdrone_results_url] | [request][my_twitter_url] |
+|--- |--- |--- |--- |--- |--- |--- |
+|VFNet+FI |28.8 |16.8 |44.0 |47.5 | [download][vfnet_fi_visdrone_results_url] | [request][my_twitter_url] |
+|VFNet+SAHI+PO |32.0 |21.4 |45.8 |45.5 | [download][vfnet_sahi_po_visdrone_results_url] | [request][my_twitter_url] |
+|VFNet+SAHI+FI+PO |33.9 |22.4 |49.1 |49.4 | [download][vfnet_sahi_fi_po_visdrone_results_url] | [request][my_twitter_url] |
+|VFNet+SF+SAHI+PO |41.9 |29.7 |58.8 |60.6 | [download][vfnet_sf_sahi_po_visdrone_results_url] | [request][my_twitter_url] |
+|VFNet+SF+SAHI+FI+PO |42.2 |29.6 |59.2 |63.3 | [download][vfnet_sf_sahi_fi_po_visdrone_results_url] | [request][my_twitter_url] |
+|--- |--- |--- |--- |--- |--- |--- |
+|TOOD+FI |29.4 |18.1 |44.1 |50.0 | [download][tood_fi_visdrone_results_url] | [request][my_twitter_url] |
+|TOOD+SAHI |31.9 |22.6 |44.0 |45.2 | [download][tood_sahi_visdrone_results_url] | [request][my_twitter_url] |
+|TOOD+SAHI+PO |32.5 |22.8 |45.2 |43.6 | [download][tood_sahi_po_visdrone_results_url] | [request][my_twitter_url] |
+|TOOD+SAHI+FI |34.6 |23.8 |48.5 |53.1 | [download][tood_sahi_fi_visdrone_results_url] | [request][my_twitter_url] |
+|TOOD+SAHI+FI+PO |34.7 |23.8 |48.9 |50.3| [download][tood_sahi_fi_po_visdrone_results_url] | [request][my_twitter_url] |
+|TOOD+SF+FI |36.8 |24.4 |53.8 |66.4 | [download][tood_sf_fi_visdrone_results_url] | [download][tood_sf_visdrone_checkpoint_url] |
+|TOOD+SF+SAHI |42.5 |31.6 |58.0 |61.1 | [download][tood_sf_sahi_visdrone_results_url] | [download][tood_sf_visdrone_checkpoint_url] |
+|TOOD+SF+SAHI+PO |43.1 |31.7 |59.0 |60.2 | [download][tood_sf_sahi_po_visdrone_results_url] | [download][tood_sf_visdrone_checkpoint_url] |
+|TOOD+SF+SAHI+FI |43.4 |31.7 |59.6 |65.6 | [download][tood_sf_sahi_fi_visdrone_results_url] | [download][tood_sf_visdrone_checkpoint_url] |
+|TOOD+SF+SAHI+FI+PO |43.5 |31.7 |59.8 |65.4 | [download][tood_sf_sahi_fi_po_visdrone_results_url] | [download][tood_sf_visdrone_checkpoint_url] |
 
 # xview results
 
@@ -64,40 +68,42 @@ refer to table 2 in [Slicing Aided Hyper Inference and Fine-tuning for Small Obj
 [fcos_fi_xview_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/fcos_fi_xview_results.zip
 [fcos_sf_sahi_xview_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/fcos_sf_sahi_xview_results.zip
 [fcos_sf_sahi_fi_xview_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/fcos_sf_sahi_fi_xview_results.zip
-[fcos_sf_sahi_fi_op_xview_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/fcos_sf_sahi_fi_op_xview_results.zip
-[fcos_sf_sahi_op_xview_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/fcos_sf_sahi_op_xview_results.zip
+[fcos_sf_sahi_fi_po_xview_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/fcos_sf_sahi_fi_op_xview_results.zip
+[fcos_sf_sahi_po_xview_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/fcos_sf_sahi_op_xview_results.zip
 
 [vfnet_fi_xview_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/vfnet_fi_xview_results.zip
 [vfnet_sf_sahi_xview_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/vfnet_sf_sahi_xview_results.zip
 [vfnet_sf_sahi_fi_xview_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/vfnet_sf_sahi_fi_xview_results.zip
-[vfnet_sf_sahi_fi_op_xview_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/vfnet_sf_sahi_fi_op_xview_results.zip
-[vfnet_sf_sahi_op_xview_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/vfnet_sf_sahi_op_xview_results.zip
+[vfnet_sf_sahi_fi_po_xview_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/vfnet_sf_sahi_fi_op_xview_results.zip
+[vfnet_sf_sahi_po_xview_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/vfnet_sf_sahi_op_xview_results.zip
 
 [tood_fi_xview_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/tood_fi_xview_results.zip
 [tood_sf_sahi_xview_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/tood_sf_sahi_xview_results.zip
 [tood_sf_sahi_fi_xview_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/tood_sf_sahi_fi_xview_results.zip
-[tood_sf_sahi_fi_op_xview_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/tood_sf_sahi_fi_op_xview_results.zip
-[tood_sf_sahi_op_xview_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/tood_sf_sahi_op_xview_results.zip
+[tood_sf_sahi_fi_po_xview_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/tood_sf_sahi_fi_op_xview_results.zip
+[tood_sf_sahi_po_xview_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/tood_sf_sahi_op_xview_results.zip
 
-|setup |AP<sub>50</sub> |AP<sub>50</sub>s |AP<sub>50</sub>m |AP<sub>50</sub>l | results |
-|--- |--- |--- |--- |--- |--- |
-|FCOS+FI |2.20 |0.10 |1.80 |7.30 | [download][fcos_fi_xview_results_url]
-|FCOS+SF+SAHI |15.8 |11.9 |18.4 |11.0 | [download][fcos_sf_sahi_xview_results_url]
-|FCOS+SF+SAHI+OP |17.1 |12.2 |20.2 |12.8 | [download][fcos_sf_sahi_op_xview_results_url]
-|FCOS+SF+SAHI+FI |15.7 |11.9 |18.4 |14.3 | [download][fcos_sf_sahi_fi_xview_results_url]
-|FCOS+SF+SAHI+FI+OP |17.0 |12.2 |20.2 |15.8 | [download][fcos_sf_sahi_fi_op_xview_results_url]
-|--- |--- |--- |--- |--- |--- |
-|VFNet+FI |2.10 |0.50 |1.80 |6.80 | [download][vfnet_fi_xview_results_url]
-|VFNet+SF+SAHI | 16.0 |11.9 |17.6 |13.1 | [download][vfnet_sf_sahi_xview_results_url]
-|VFNet+SF+SAHI+OP |17.7| 13.7 |19.7 |15.4 | [download][vfnet_sf_sahi_op_xview_results_url]
-|VFNet+SF+SAHI+FI |15.8 |11.9 |17.5 |15.2 | [download][vfnet_sf_sahi_fi_xview_results_url]
-|VFNet+SF+SAHI+FI+OP |17.5 |13.7 |19.6 |17.6 | [download][vfnet_sf_sahi_fi_op_xview_results_url]
-|--- |--- |--- |--- |--- |--- |
-|TOOD+FI |2.10 |0.10 |2.00 |5.20 | [download][tood_fi_xview_results_url]
-|TOOD+SF+SAHI |19.4 |14.6 |22.5 |14.2 | [download][tood_sf_sahi_xview_results_url]
-|TOOD+SF+SAHI+OP |20.6 |14.9 |23.6 |17.0 | [download][tood_sf_sahi_op_xview_results_url]
-|TOOD+SF+SAHI+FI |19.2 |14.6 |22.3 |14.7 | [download][tood_sf_sahi_fi_xview_results_url]
-|TOOD+SF+SAHI+FI+OP |20.4 |14.9 |23.5 |17.6 | [download][tood_sf_sahi_fi_op_xview_results_url]
+[tood_sf_xview_checkpoint_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.2/tood_sf_xview.pth
+
+|setup |AP<sub>50</sub> |AP<sub>50</sub>s |AP<sub>50</sub>m |AP<sub>50</sub>l | results | checkpoints |
+|--- |--- |--- |--- |--- |--- |--- |
+|FCOS+FI |2.20 |0.10 |1.80 |7.30 | [download][fcos_fi_xview_results_url] | [request][my_twitter_url] |
+|FCOS+SF+SAHI |15.8 |11.9 |18.4 |11.0 | [download][fcos_sf_sahi_xview_results_url] | [request][my_twitter_url] |
+|FCOS+SF+SAHI+PO |17.1 |12.2 |20.2 |12.8 | [download][fcos_sf_sahi_po_xview_results_url] | [request][my_twitter_url] |
+|FCOS+SF+SAHI+FI |15.7 |11.9 |18.4 |14.3 | [download][fcos_sf_sahi_fi_xview_results_url] | [request][my_twitter_url] |
+|FCOS+SF+SAHI+FI+PO |17.0 |12.2 |20.2 |15.8 | [download][fcos_sf_sahi_fi_po_xview_results_url] | [request][my_twitter_url] |
+|--- |--- |--- |--- |--- |--- |--- |
+|VFNet+FI |2.10 |0.50 |1.80 |6.80 | [download][vfnet_fi_xview_results_url] | [request][my_twitter_url] |
+|VFNet+SF+SAHI | 16.0 |11.9 |17.6 |13.1 | [download][vfnet_sf_sahi_xview_results_url] | [request][my_twitter_url] |
+|VFNet+SF+SAHI+PO |17.7| 13.7 |19.7 |15.4 | [download][vfnet_sf_sahi_po_xview_results_url] | [request][my_twitter_url] |
+|VFNet+SF+SAHI+FI |15.8 |11.9 |17.5 |15.2 | [download][vfnet_sf_sahi_fi_xview_results_url] | [request][my_twitter_url] |
+|VFNet+SF+SAHI+FI+PO |17.5 |13.7 |19.6 |17.6 | [download][vfnet_sf_sahi_fi_po_xview_results_url] | [request][my_twitter_url] |
+|--- |--- |--- |--- |--- |--- |--- |
+|TOOD+FI |2.10 |0.10 |2.00 |5.20 | [download][tood_fi_xview_results_url] | [request][my_twitter_url] |
+|TOOD+SF+SAHI |19.4 |14.6 |22.5 |14.2 | [download][tood_sf_sahi_xview_results_url] | [download][tood_sf_xview_checkpoint_url] |
+|TOOD+SF+SAHI+PO |20.6 |14.9 |23.6 |17.0 | [download][tood_sf_sahi_po_xview_results_url] | [download][tood_sf_xview_checkpoint_url] |
+|TOOD+SF+SAHI+FI |19.2 |14.6 |22.3 |14.7 | [download][tood_sf_sahi_fi_xview_results_url] | [download][tood_sf_xview_checkpoint_url] |
+|TOOD+SF+SAHI+FI+PO |20.4 |14.9 |23.5 |17.6 | [download][tood_sf_sahi_fi_po_xview_results_url] | [download][tood_sf_xview_checkpoint_url] |
 
 # env setup
 
