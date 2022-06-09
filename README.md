@@ -119,6 +119,14 @@ install other requirements:
 pip install -r requirements.txt
 ```
 
+# evaluation
+
+- download desired checkpoint from the urls in readme.
+
+- download xivew or visdrone dataset and convert to COCO format.
+
+- set `MODEL_PATH`, `MODEL_CONFIG_PATH`, `EVAL_IMAGES_FOLDER_DIR`, `EVAL_DATASET_JSON_PATH`, `INFERENCE_SETTING` in [predict_evaluate_analyse script](eval_tools/predict_evaluate_analyse.py) then run the script.
+
 # roadmap
 
 - [x] add train test split support for xview to coco converter
@@ -126,4 +134,4 @@ pip install -r requirements.txt
 - [x] add mmdet config files (fcos, vfnet and tood) for visdrone training (9 train experiments)
 - [x] add coco result.json files, classwise coco eval results error analysis plots for all xview experiments
 - [x] add coco result.json files, classwise coco eval results error analysis plots for all visdrone experiments
-- [ ] add .py scripts for inference + evaluation + error analysis using `sahi`
+- [X] add .py scripts for inference + evaluation + error analysis using `sahi`
