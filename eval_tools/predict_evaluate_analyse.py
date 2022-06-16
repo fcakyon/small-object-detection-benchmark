@@ -2,7 +2,7 @@ from pathlib import Path
 
 from sahi.predict import predict
 from sahi.scripts.coco_error_analysis import analyse
-from sahi.scripts.coco_evaluation import evaluate;
+from sahi.scripts.coco_evaluation import evaluate
 
 MODEL_PATH = ""
 MODEL_CONFIG_PATH = ""
