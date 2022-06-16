@@ -1,4 +1,4 @@
-sahi>=0.8.22
+sahi>=0.9.3
 pillow
 mmdet==2.20.0
 mmcv-full==1.4.2
