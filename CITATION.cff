@@ -1,4 +1,5 @@
 cff-version: 1.2.0
+type: article
 title: "Slicing Aided Hyper Inference and Fine-tuning for Small Object Detection"
 doi: https://doi.org/10.48550/arXiv.2202.06934
 url: https://arxiv.org/abs/2202.06934
