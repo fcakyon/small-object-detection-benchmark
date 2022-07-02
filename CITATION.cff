@@ -1,5 +1,6 @@
 cff-version: 1.2.0
 preferred-citation:
+  name: sahi2022
   type: article
   title: "Slicing Aided Hyper Inference and Fine-tuning for Small Object Detection"
   doi: https://doi.org/10.48550/arXiv.2202.06934
