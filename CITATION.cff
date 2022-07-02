@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+title: "Slicing Aided Hyper Inference and Fine-tuning for Small Object Detection"
+doi: https://doi.org/10.48550/arXiv.2202.06934
+url: https://arxiv.org/abs/2202.06934
+journal: arXiv
+message: "If you use this results in your work, please cite it."
+authors:
+- family-names: "Akyon"
+  given-names: "Fatih Cagatay"
+- family-names: "Altinuc"
+  given-names: "Sinan Onur"
+- family-names: "Temizel"
+  given-names: "Alptekin"
+date-released: 2022-02-14
