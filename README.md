@@ -33,6 +33,7 @@ refer to table 1 in [Slicing Aided Hyper Inference and Fine-tuning for Small Obj
 [tood_sf_sahi_fi_po_visdrone_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/tood_sf_sahi_fi_po_visdrone_results.zip
 
 [tood_sf_visdrone_checkpoint_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.2/tood_sf_visdrone.pth
+[fcos_sf_visdrone_checkpoint_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.2/fcos_sf_visdrone.pth
 
 [my_twitter_url]: https://twitter.com/fcakyon
 
@@ -41,8 +42,8 @@ refer to table 1 in [Slicing Aided Hyper Inference and Fine-tuning for Small Obj
 |FCOS+FI |25.8 |14.2 |39.6 |45.1 | [download][fcos_fi_visdrone_results_url] | [request][my_twitter_url] |
 |FCOS+SAHI+PO |29.0 |18.9 |41.5 |46.4 | [download][fcos_sahi_po_visdrone_results_url] | [request][my_twitter_url] |
 |FCOS+SAHI+FI+PO |31.0 |19.8 |44.6 |49.0 | [download][fcos_sahi_fi_po_visdrone_results_url] | [request][my_twitter_url] |
-|FCOS+SF+SAHI+PO |38.1 |25.7 |54.8 |56.9 | [download][fcos_sf_sahi_po_visdrone_results_url] | [request][my_twitter_url] |
-|FCOS+SF+SAHI+FI+PO |38.5 |25.9 |55.4 |59.8 | [download][fcos_sf_sahi_fi_po_visdrone_results_url] | [request][my_twitter_url] |
+|FCOS+SF+SAHI+PO |38.1 |25.7 |54.8 |56.9 | [download][fcos_sf_sahi_po_visdrone_results_url] | [download][fcos_sf_visdrone_checkpoint_url] |
+|FCOS+SF+SAHI+FI+PO |38.5 |25.9 |55.4 |59.8 | [download][fcos_sf_sahi_fi_po_visdrone_results_url] | [download][fcos_sf_visdrone_checkpoint_url] |
 |--- |--- |--- |--- |--- |--- |--- |
 |VFNet+FI |28.8 |16.8 |44.0 |47.5 | [download][vfnet_fi_visdrone_results_url] | [request][my_twitter_url] |
 |VFNet+SAHI+PO |32.0 |21.4 |45.8 |45.5 | [download][vfnet_sahi_po_visdrone_results_url] | [request][my_twitter_url] |
