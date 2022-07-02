@@ -4,6 +4,19 @@ small-object-detection benchmark on visdrone and xview datasets using [fcos](htt
 
 refer to [Slicing Aided Hyper Inference and Fine-tuning for Small Object Detection](https://arxiv.org/abs/2202.06934) for full technical analysis
 
+# citation
+
+If you use any file/result from this repo in your work, please cite it as:
+
+```
+@article{akyon2022sahi,
+  title={Slicing Aided Hyper Inference and Fine-tuning for Small Object Detection},
+  author={Akyon, Fatih Cagatay and Altinuc, Sinan Onur and Temizel, Alptekin},
+  journal={arXiv preprint arXiv:2202.06934},
+  year={2022}
+}
+```
+
 # visdrone results
 
 refer to table 1 in [Slicing Aided Hyper Inference and Fine-tuning for Small Object Detection](https://arxiv.org/abs/2202.06934) for more detail on visdrone results
