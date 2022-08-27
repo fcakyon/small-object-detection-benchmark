@@ -1,10 +1,14 @@
 # small-object-detection-benchmark
 
+🔥 our paper has been accepted to be presented in ICIP 2022 Bordeaux, France (16-19 October 2022)
+
+## summary
+
 small-object-detection benchmark on visdrone and xview datasets using [fcos](https://arxiv.org/abs/1904.01355), [vfnet](https://arxiv.org/abs/1810.05943) and [tood](https://arxiv.org/abs/2108.07755) detectors
 
 refer to [Slicing Aided Hyper Inference and Fine-tuning for Small Object Detection](https://arxiv.org/abs/2202.06934) for full technical analysis
 
-# citation
+## citation
 
 If you use any file/result from this repo in your work, please cite it as:
 
@@ -17,7 +21,7 @@ If you use any file/result from this repo in your work, please cite it as:
 }
 ```
 
-# visdrone results
+## visdrone results
 
 refer to table 1 in [Slicing Aided Hyper Inference and Fine-tuning for Small Object Detection](https://arxiv.org/abs/2202.06934) for more detail on visdrone results
 
@@ -75,7 +79,7 @@ refer to table 1 in [Slicing Aided Hyper Inference and Fine-tuning for Small Obj
 |TOOD+SF+SAHI+FI |43.4 |31.7 |59.6 |65.6 | [download][tood_sf_sahi_fi_visdrone_results_url] | [download][tood_sf_visdrone_checkpoint_url] |
 |TOOD+SF+SAHI+FI+PO |43.5 |31.7 |59.8 |65.4 | [download][tood_sf_sahi_fi_po_visdrone_results_url] | [download][tood_sf_visdrone_checkpoint_url] |
 
-# xview results
+## xview results
 
 refer to table 2 in [Slicing Aided Hyper Inference and Fine-tuning for Small Object Detection](https://arxiv.org/abs/2202.06934) for more detail on xview results
 
@@ -119,7 +123,7 @@ refer to table 2 in [Slicing Aided Hyper Inference and Fine-tuning for Small Obj
 |TOOD+SF+SAHI+FI |19.2 |14.6 |22.3 |14.7 | [download][tood_sf_sahi_fi_xview_results_url] | [download][tood_sf_xview_checkpoint_url] |
 |TOOD+SF+SAHI+FI+PO |20.4 |14.9 |23.5 |17.6 | [download][tood_sf_sahi_fi_po_xview_results_url] | [download][tood_sf_xview_checkpoint_url] |
 
-# env setup
+## env setup
 
 install pytorch:
 
@@ -133,7 +137,7 @@ install other requirements:
 pip install -r requirements.txt
 ```
 
-# evaluation
+## evaluation
 
 - download desired checkpoint from the urls in readme.
 
@@ -141,7 +145,7 @@ pip install -r requirements.txt
 
 - set `MODEL_PATH`, `MODEL_CONFIG_PATH`, `EVAL_IMAGES_FOLDER_DIR`, `EVAL_DATASET_JSON_PATH`, `INFERENCE_SETTING` in [predict_evaluate_analyse script](eval_tools/predict_evaluate_analyse.py) then run the script.
 
-# roadmap
+## roadmap
 
 - [x] add train test split support for xview to coco converter
 - [x] add mmdet config files (fcos, vfnet and tood) for xview training (9 train experiments)
