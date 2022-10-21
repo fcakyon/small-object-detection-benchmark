@@ -1,12 +1,14 @@
 # small-object-detection-benchmark
 
-🔥 our paper has been accepted to be presented in ICIP 2022 Bordeaux, France (16-19 October 2022)
+<a href="https://ieeexplore.ieee.org/document/9897990"><img src="https://img.shields.io/badge/DOI-10.1109%2FICIP46576.2022.9897990-orange.svg" alt="ci">
+
+🔥 our paper has been presented in ICIP 2022 Bordeaux, France (16-19 October 2022)
 
 ## summary
 
 small-object-detection benchmark on visdrone and xview datasets using [fcos](https://arxiv.org/abs/1904.01355), [vfnet](https://arxiv.org/abs/1810.05943) and [tood](https://arxiv.org/abs/2108.07755) detectors
 
-refer to [Slicing Aided Hyper Inference and Fine-tuning for Small Object Detection](https://arxiv.org/abs/2202.06934) for full technical analysis
+refer to [Slicing Aided Hyper Inference and Fine-tuning for Small Object Detection](https://ieeexplore.ieee.org/document/9897990) for full technical analysis
 
 ## citation
 
@@ -16,14 +18,16 @@ If you use any file/result from this repo in your work, please cite it as:
 @article{akyon2022sahi,
   title={Slicing Aided Hyper Inference and Fine-tuning for Small Object Detection},
   author={Akyon, Fatih Cagatay and Altinuc, Sinan Onur and Temizel, Alptekin},
-  journal={arXiv preprint arXiv:2202.06934},
+  journal={2022 IEEE International Conference on Image Processing (ICIP)},
+  doi={10.1109/ICIP46576.2022.9897990},
+  pages={966-970},
   year={2022}
 }
 ```
 
 ## visdrone results
 
-refer to table 1 in [Slicing Aided Hyper Inference and Fine-tuning for Small Object Detection](https://arxiv.org/abs/2202.06934) for more detail on visdrone results
+refer to table 1 in [Slicing Aided Hyper Inference and Fine-tuning for Small Object Detection](https://ieeexplore.ieee.org/document/9897990) for more detail on visdrone results
 
 [fcos_fi_visdrone_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/fcos_fi_visdrone_results.zip
 [fcos_sahi_po_visdrone_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/fcos_sahi_po_visdrone_results.zip
@@ -81,7 +85,7 @@ refer to table 1 in [Slicing Aided Hyper Inference and Fine-tuning for Small Obj
 
 ## xview results
 
-refer to table 2 in [Slicing Aided Hyper Inference and Fine-tuning for Small Object Detection](https://arxiv.org/abs/2202.06934) for more detail on xview results
+refer to table 2 in [Slicing Aided Hyper Inference and Fine-tuning for Small Object Detection](https://ieeexplore.ieee.org/document/9897990) for more detail on xview results
 
 [fcos_fi_xview_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/fcos_fi_xview_results.zip
 [fcos_sf_sahi_xview_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/fcos_sf_sahi_xview_results.zip
