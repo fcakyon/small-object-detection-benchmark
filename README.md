@@ -1,6 +1,6 @@
 # small-object-detection-benchmark
 
-🔥 our paper has been accepted to be presented in ICIP 2022 Bordeaux, France (16-19 October 2022)
+🔥 our paper has been presented in ICIP 2022 Bordeaux, France (16-19 October 2022)
 
 ## summary
 
@@ -16,7 +16,9 @@ If you use any file/result from this repo in your work, please cite it as:
 @article{akyon2022sahi,
   title={Slicing Aided Hyper Inference and Fine-tuning for Small Object Detection},
   author={Akyon, Fatih Cagatay and Altinuc, Sinan Onur and Temizel, Alptekin},
-  journal={arXiv preprint arXiv:2202.06934},
+  journal={2022 IEEE International Conference on Image Processing (ICIP)},
+  doi={10.1109/ICIP46576.2022.9897990},
+  pages={966-970},
   year={2022}
 }
 ```
