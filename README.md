@@ -106,21 +106,23 @@ refer to table 2 in [Slicing Aided Hyper Inference and Fine-tuning for Small Obj
 [tood_sf_sahi_fi_po_xview_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/tood_sf_sahi_fi_op_xview_results.zip
 [tood_sf_sahi_po_xview_results_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.1/tood_sf_sahi_op_xview_results.zip
 
+[fcos_sf_xview_checkpoint_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.2/fcos_sf_xview.pth
+[vfnet_sf_xview_checkpoint_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.2/vfnet_sf_xview.pth
 [tood_sf_xview_checkpoint_url]: https://github.com/fcakyon/sahi-benchmark/releases/download/v0.0.2/tood_sf_xview.pth
 
 |setup |AP<sub>50</sub> |AP<sub>50</sub>s |AP<sub>50</sub>m |AP<sub>50</sub>l | results | checkpoints |
 |--- |--- |--- |--- |--- |--- |--- |
 |FCOS+FI |2.20 |0.10 |1.80 |7.30 | [download][fcos_fi_xview_results_url] | [request][my_twitter_url] |
-|FCOS+SF+SAHI |15.8 |11.9 |18.4 |11.0 | [download][fcos_sf_sahi_xview_results_url] | [request][my_twitter_url] |
-|FCOS+SF+SAHI+PO |17.1 |12.2 |20.2 |12.8 | [download][fcos_sf_sahi_po_xview_results_url] | [request][my_twitter_url] |
-|FCOS+SF+SAHI+FI |15.7 |11.9 |18.4 |14.3 | [download][fcos_sf_sahi_fi_xview_results_url] | [request][my_twitter_url] |
-|FCOS+SF+SAHI+FI+PO |17.0 |12.2 |20.2 |15.8 | [download][fcos_sf_sahi_fi_po_xview_results_url] | [request][my_twitter_url] |
+|FCOS+SF+SAHI |15.8 |11.9 |18.4 |11.0 | [download][fcos_sf_sahi_xview_results_url] | [download][fcos_sf_xview_checkpoint_url] |
+|FCOS+SF+SAHI+PO |17.1 |12.2 |20.2 |12.8 | [download][fcos_sf_sahi_po_xview_results_url] | [download][fcos_sf_xview_checkpoint_url] |
+|FCOS+SF+SAHI+FI |15.7 |11.9 |18.4 |14.3 | [download][fcos_sf_sahi_fi_xview_results_url] | [download][fcos_sf_xview_checkpoint_url] |
+|FCOS+SF+SAHI+FI+PO |17.0 |12.2 |20.2 |15.8 | [download][fcos_sf_sahi_fi_po_xview_results_url] | [download][fcos_sf_xview_checkpoint_url] |
 |--- |--- |--- |--- |--- |--- |--- |
 |VFNet+FI |2.10 |0.50 |1.80 |6.80 | [download][vfnet_fi_xview_results_url] | [request][my_twitter_url] |
-|VFNet+SF+SAHI | 16.0 |11.9 |17.6 |13.1 | [download][vfnet_sf_sahi_xview_results_url] | [request][my_twitter_url] |
-|VFNet+SF+SAHI+PO |17.7| 13.7 |19.7 |15.4 | [download][vfnet_sf_sahi_po_xview_results_url] | [request][my_twitter_url] |
-|VFNet+SF+SAHI+FI |15.8 |11.9 |17.5 |15.2 | [download][vfnet_sf_sahi_fi_xview_results_url] | [request][my_twitter_url] |
-|VFNet+SF+SAHI+FI+PO |17.5 |13.7 |19.6 |17.6 | [download][vfnet_sf_sahi_fi_po_xview_results_url] | [request][my_twitter_url] |
+|VFNet+SF+SAHI | 16.0 |11.9 |17.6 |13.1 | [download][vfnet_sf_sahi_xview_results_url] | [download][vfnet_sf_xview_checkpoint_url] |
+|VFNet+SF+SAHI+PO |17.7| 13.7 |19.7 |15.4 | [download][vfnet_sf_sahi_po_xview_results_url] | [download][vfnet_sf_xview_checkpoint_url] |
+|VFNet+SF+SAHI+FI |15.8 |11.9 |17.5 |15.2 | [download][vfnet_sf_sahi_fi_xview_results_url] | [download][vfnet_sf_xview_checkpoint_url] |
+|VFNet+SF+SAHI+FI+PO |17.5 |13.7 |19.6 |17.6 | [download][vfnet_sf_sahi_fi_po_xview_results_url] | [download][vfnet_sf_xview_checkpoint_url] |
 |--- |--- |--- |--- |--- |--- |--- |
 |TOOD+FI |2.10 |0.10 |2.00 |5.20 | [download][tood_fi_xview_results_url] | [request][my_twitter_url] |
 |TOOD+SF+SAHI |19.4 |14.6 |22.5 |14.2 | [download][tood_sf_sahi_xview_results_url] | [download][tood_sf_xview_checkpoint_url] |
