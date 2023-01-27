@@ -1,7 +1,7 @@
 # small-object-detection-benchmark
 
 <a href="https://ieeexplore.ieee.org/document/9897990"><img src="https://img.shields.io/badge/DOI-10.1109%2FICIP46576.2022.9897990-orange.svg" alt="ci">
-<a href="https://twitter.com/fcakyon"><img src="https://img.shields.io/twitter/follow/fcakyon?color=blue&logo=twitter&style=flat" alt="fcakyon twitter"></a>
+<a href="https://twitter.com/fcakyon"><img src="https://img.shields.io/badge/twitter-fcakyon_-blue?logo=twitter&style=flat" alt="fcakyon twitter"></a>
 
 🔥 our paper has been presented in ICIP 2022 Bordeaux, France (16-19 October 2022)
 
