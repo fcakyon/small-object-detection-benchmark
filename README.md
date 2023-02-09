@@ -5,6 +5,8 @@
 
 🔥 our paper has been presented in ICIP 2022 Bordeaux, France (16-19 October 2022)
 
+[📜 List of publications that cite this work (currently 30+)](https://scholar.google.com/scholar?hl=en&as_sdt=2005&sciodt=0,5&cites=14065474760484865747&scipsc=&q=&scisbd=1)
+
 ## summary
 
 small-object-detection benchmark on visdrone and xview datasets using [fcos](https://arxiv.org/abs/1904.01355), [vfnet](https://arxiv.org/abs/1810.05943) and [tood](https://arxiv.org/abs/2108.07755) detectors
