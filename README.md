@@ -9,7 +9,9 @@
 
 ## summary
 
-small-object-detection benchmark on visdrone and xview datasets using [fcos](https://arxiv.org/abs/1904.01355), [vfnet](https://arxiv.org/abs/1810.05943) and [tood](https://arxiv.org/abs/2108.07755) detectors
+
+
+small-object-detection benchmark on visdrone and xview datasets using [fcos](https://arxiv.org/abs/1904.01355), [vfnet](https://arxiv.org/abs/2008.13367) and [tood](https://arxiv.org/abs/2108.07755) detectors
 
 refer to [Slicing Aided Hyper Inference and Fine-tuning for Small Object Detection](https://ieeexplore.ieee.org/document/9897990) for full technical analysis
 
