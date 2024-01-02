@@ -5,7 +5,7 @@
 
 🔥 our paper has been presented in ICIP 2022 Bordeaux, France (16-19 October 2022)
 
-[📜 List of publications that cite this work (currently 70+)](https://scholar.google.com/scholar?hl=en&as_sdt=2005&sciodt=0,5&cites=14065474760484865747&scipsc=&q=&scisbd=1)
+[📜 List of publications that cite this work (currently 120+)](https://scholar.google.com/scholar?hl=en&as_sdt=2005&sciodt=0,5&cites=14065474760484865747&scipsc=&q=&scisbd=1)
 
 ## summary
 
